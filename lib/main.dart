@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'pages/homePage.dart';
+import 'pages/homepage.dart';
 import 'package:hotstarclone/ASSETS/colors.dart';
 
 void main() {
@@ -70,9 +70,9 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           height: 30.0,
           fit: BoxFit.cover,
         ),
-        actions: [IconButton(onPressed: () {}, icon: Icon(Icons.search))],
+        actions: [IconButton(onPressed: () {}, icon: const Icon(Icons.search))],
       ),
-      drawer: Drawer(),
+      drawer: const Drawer(),
       body: _widgetOptions.elementAt(_selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
         showUnselectedLabels: true,
@@ -82,7 +82,6 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           BottomNavigationBarItem(
             icon: Icon(
               Icons.home,
-              size: 20,
             ),
             label: 'Home',
             backgroundColor: primaryColor,
@@ -90,7 +89,6 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           BottomNavigationBarItem(
             icon: Icon(
               Icons.tv,
-              size: 20,
             ),
             label: 'TV',
           ),
@@ -99,22 +97,21 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
               image: NetworkImage(
                 'https://terrigen-cdn-dev.marvel.com/content/prod/1x/disneyplus_lob_log_forcd.png',
               ),
-              width: 50,
-              height: 50,
+              width: 40,
+              height: 40,
+              fit: BoxFit.scaleDown,
             ),
             label: '',
           ),
           BottomNavigationBarItem(
             icon: Icon(
               Icons.movie_creation_sharp,
-              size: 20,
             ),
             label: 'Movie',
           ),
           BottomNavigationBarItem(
             icon: Icon(
               Icons.sports_cricket,
-              size: 20,
             ),
             label: 'Sports',
           ),
