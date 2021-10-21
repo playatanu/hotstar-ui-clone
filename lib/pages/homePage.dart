@@ -1,27 +1,28 @@
+// ignore_for_file: file_names
+
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:hotstarclone/ASSETS/colors.dart';
-import 'package:hotstarclone/DATA/nData.dart';
+import 'package:hotstarclone/assets/colors.dart';
+import 'package:hotstarclone/data/ndata.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    MediaQueryData queryData;
-    queryData = MediaQuery.of(context);
+    // MediaQueryData queryData;
+    // queryData = MediaQuery.of(context);
     return ListView(
       children: [
-        Slider(),
+        const Slider(),
 
         //first Row
         Padding(
-          padding: EdgeInsets.only(left: 10, top: 8),
+          padding: const EdgeInsets.only(left: 10, top: 8),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
+              const Text(
                 'Latest & Trending',
                 style: TextStyle(color: white),
               ),
@@ -45,26 +46,26 @@ class Home extends StatelessWidget {
         ),
         //first Row
         Padding(
-          padding: EdgeInsets.only(left: 10, top: 8),
+          padding: const EdgeInsets.only(left: 10, top: 8),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                'Latest & Trending',
+              const Text(
+                'Popular Shows',
                 style: TextStyle(color: white),
               ),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   children: [
-                    Movie(image: movielist[0]),
-                    Movie(image: movielist[1]),
-                    Movie(image: movielist[2]),
-                    Movie(image: movielist[3]),
-                    Movie(image: movielist[4]),
-                    Movie(image: movielist[5]),
-                    Movie(image: movielist[6]),
-                    Movie(image: movielist[7]),
+                    Movie(image: showlist[0]),
+                    Movie(image: showlist[1]),
+                    Movie(image: showlist[2]),
+                    Movie(image: showlist[3]),
+                    Movie(image: showlist[4]),
+                    Movie(image: showlist[5]),
+                    Movie(image: showlist[6]),
+                    Movie(image: showlist[7]),
                   ],
                 ),
               )
@@ -73,26 +74,26 @@ class Home extends StatelessWidget {
         ),
         //first Row
         Padding(
-          padding: EdgeInsets.only(left: 10, top: 8),
+          padding: const EdgeInsets.only(left: 10, top: 8),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                'Latest & Trending',
+              const Text(
+                'Movies Recommended For You',
                 style: TextStyle(color: white),
               ),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   children: [
-                    Movie(image: movielist[0]),
-                    Movie(image: movielist[1]),
-                    Movie(image: movielist[2]),
-                    Movie(image: movielist[3]),
-                    Movie(image: movielist[4]),
-                    Movie(image: movielist[5]),
-                    Movie(image: movielist[6]),
-                    Movie(image: movielist[7]),
+                    Movie(image: removielist[0]),
+                    Movie(image: removielist[1]),
+                    Movie(image: removielist[2]),
+                    Movie(image: removielist[3]),
+                    Movie(image: removielist[4]),
+                    Movie(image: removielist[5]),
+                    Movie(image: removielist[6]),
+                    Movie(image: removielist[7]),
                   ],
                 ),
               )
@@ -111,8 +112,8 @@ class Slider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return new CarouselSlider(
-      options: new CarouselOptions(
+    return CarouselSlider(
+      options: CarouselOptions(
         height: 200.0,
       ),
       items: [
@@ -124,9 +125,10 @@ class Slider extends StatelessWidget {
           builder: (BuildContext context) {
             return Container(
                 width: MediaQuery.of(context).size.width,
-                margin: EdgeInsets.symmetric(horizontal: 5.0, vertical: 10.0),
-                decoration: BoxDecoration(color: Colors.amber),
-                child: Image.network('$i', fit: BoxFit.cover));
+                margin:
+                    const EdgeInsets.symmetric(horizontal: 5.0, vertical: 10.0),
+                decoration: const BoxDecoration(color: Colors.amber),
+                child: Image.network(i, fit: BoxFit.cover));
           },
         );
       }).toList(),
@@ -145,14 +147,14 @@ class Movie extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(top: 10, right: 10),
-      child: new Container(
+      child: Container(
         height: 200,
         width: 130,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8),
           image: DecorationImage(
               image: NetworkImage(
-                '$image',
+                image,
               ),
               fit: BoxFit.cover),
         ),
